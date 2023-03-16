@@ -8,10 +8,12 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {CurrencyComponent} from "./Currency/currency.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrencyComponent
   ],
   imports: [
     BrowserModule,

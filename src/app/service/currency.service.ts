@@ -9,11 +9,15 @@ import { environment } from '../../environments/environment.docker';
 })
 export class CurrencyService {
 
+  conversionesURL="http://localhost:8008/paginas?";
   constructor(private http: HttpClient) {
   }
 
   public convertCurrency(from: string, to: string, amount: number): Observable<ResponseCurrencyDto> {
     return this.http.get<ResponseCurrencyDto>(`${environment.BACKEND_URL}/api/currency/exchange?from=`
       + from + "&to=" + to + "&amount=" + amount);
+  }
+  public conversiones(page: number, size: number, sort: string, asc: boolean): Observable<any> {
+    return this.http.get<any>(this.conversionesURL+`page=${page}&size=${size}&sort=${sort}&asc=${asc}`);
   }
 }
