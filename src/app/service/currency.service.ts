@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment.docker';
 })
 export class CurrencyService {
 
-  conversionesURL="http://localhost:8008/paginas?";
+  //conversionesURL="http://localhost:8008/paginas?";
   constructor(private http: HttpClient) {
   }
 
@@ -18,6 +18,6 @@ export class CurrencyService {
       + from + "&to=" + to + "&amount=" + amount);
   }
   public conversiones(page: number, size: number, sort: string, asc: boolean): Observable<any> {
-    return this.http.get<any>(this.conversionesURL+`page=${page}&size=${size}&sort=${sort}&asc=${asc}`);
+    return this.http.get<any>(`${environment.BACKEND_URL}/paginas?page=${page}&size=${size}&sort=${sort}&asc=${asc}`);
   }
 }

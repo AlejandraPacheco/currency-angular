@@ -1,0 +1,4 @@
+GET http://localhost:8008/paginas?page=0&size=10&sort=id&asc=true
+
+###
+GET http://localhost:4200/backend/paginas?page=0&size=10&sort=id&asc=true
