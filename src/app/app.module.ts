@@ -8,14 +8,18 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {CurrencyComponent} from "./Currency/currency.component";
 import { initializeKeycloak } from './init/keycloak-init.factory';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
+import { FormComponent } from './components/form/form.component';
+import { ErrorComponent } from './components/error/error.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CurrencyComponent
+    FormComponent,
+    ErrorComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

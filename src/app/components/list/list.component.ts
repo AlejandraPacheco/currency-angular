@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {CurrencyService} from "../service/currency.service";
+import { Component } from '@angular/core';
+import { CurrencyService } from 'src/app/service/currency.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './currency.component.html',
-  styleUrls: ['./currency.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class CurrencyComponent implements OnInit{
+export class ListComponent {
   title = 'software';
   test = 'prueba';
   page = 0;
