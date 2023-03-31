@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { KeycloakService } from 'keycloak-angular';
 import { ResponseCurrencyDto } from 'src/app/dto/response.currency.dto';
 import { CurrencyService } from 'src/app/service/currency.service';
 
@@ -15,8 +14,7 @@ export class FormComponent {
   currencyForm: FormGroup;
   responseCurrencyDto: ResponseCurrencyDto;
 
-  constructor(private formBuilder: FormBuilder, private currencyService: CurrencyService,
-              private keycloakService: KeycloakService) {
+  constructor(private formBuilder: FormBuilder, private currencyService: CurrencyService) {
     this.currencyForm = this.formBuilder.group({
       from: '',
       to: '',
@@ -40,7 +38,5 @@ export class FormComponent {
     console.log('test');
   }
 
-  logout() {
-    this.keycloakService.logout("http://localhost:4200");
-  }
+
 }

@@ -7,8 +7,8 @@ import { ListComponent } from './components/list/list.component';
 import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: FormComponent, data: {roles: ['ADMIN']}, canActivate: [AuthGuard] },
-  { path: 'list', component: ListComponent },
+  { path: '', component: FormComponent, data: {roles: ['USER']}, canActivate: [AuthGuard] },
+  { path: 'list', component: ListComponent, data: {roles: ['ADMIN']}, canActivate: [AuthGuard]  },
   { path: 'error', component: ErrorComponent}
 ];
 
