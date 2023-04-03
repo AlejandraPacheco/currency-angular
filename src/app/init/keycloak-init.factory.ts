@@ -1,10 +1,11 @@
 import { KeycloakService } from "keycloak-angular";
+import { environment } from "src/environments/environment.docker";
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: "http://localhost:8080",
+        url: environment.KEYCLOAK_URL,
         realm: "software",
         clientId: "frontend"
       },
